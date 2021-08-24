@@ -1,0 +1,34 @@
+[user]
+	email = 15658199+gVirtu@users.noreply.github.com
+	name = Giancarlo
+
+[push]
+	default = current
+
+[alias]
+	co = checkout
+	cob = checkout -b
+	c = commit -m
+	ca = commit --amend
+	cane = commit --amend --no-edit
+	cl = clone
+	cp = cherry-pick
+	r = rebase
+	rc = rebase --continue
+	rd = rebase development
+	ri = rebase -i @~5
+	pf = push --force-with-lease
+	pr = pull --rebase
+	p = push
+	s = status
+	sh = stash
+	sp = stash pop
+	l = log
+	rl = reflog
+	a = add
+	aa = add .
+	rh = reset HEAD
+	rh1 = reset HEAD~1
+	sup = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+[init]
+	defaultBranch = main
