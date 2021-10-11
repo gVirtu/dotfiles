@@ -20,6 +20,11 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
+read -p "install zsh autosuggestions? " -n 1 -r; echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    sudo git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+fi
+
 read -p "install powerline fonts? " -n 1 -r; echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo apt-get install fonts-powerline
@@ -35,6 +40,12 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo apt-get -y install build-essential autoconf m4 libncurses5-dev libwxgtk3.0-gtk3-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-11-jdk
     asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
     asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+fi
+
+read -p "install asdf postgres plugin? " -n 1 -r; echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    sudo apt install linux-headers-$(uname -r) build-essential libreadline-dev zlib1g-dev curl
+    asdf plugin-add postgres
 fi
 
 read -p "install VScode? " -n 1 -r; echo
@@ -129,6 +140,16 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo apt-get install psensor
 fi
 
+read -p "install AWS CLI? " -n 1 -r; echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    sudo apt-get install awscli
+fi
+
+read -p "install Kazam? " -n 1 -r; echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    sudo apt-get install kazam
+fi
+
 read -p "install Slack (Flatpak)? " -n 1 -r; echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub com.slack.Slack
@@ -152,4 +173,9 @@ fi
 read -p "install VLC (Flatpak)? " -n 1 -r; echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub org.videolan.VLC
+fi
+
+read -p "install Discord (Flatpak)? " -n 1 -r; echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    flatpak install flathub com.discordapp.Discord
 fi

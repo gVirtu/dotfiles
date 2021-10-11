@@ -40,6 +40,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " WordMotion (alternative to CamelCaseMotion)
     Plug 'chaoren/vim-wordmotion'
 
+    " Matchit
+    Plug 'adriaanzon/vim-textobj-matchit'
+
+    " VisualStar
+    Plug 'thinca/vim-visualstar'
+
 call plug#end()
 
 " Map Leader to space

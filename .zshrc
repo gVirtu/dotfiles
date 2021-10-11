@@ -86,6 +86,8 @@ plugins=(
   git
   asdf
   tmux
+  zsh-autosuggestions
+  env
 )
 
 source $ZSH/oh-my-zsh.sh
