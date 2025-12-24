@@ -12,9 +12,12 @@ if [ -n "$WINDOW_ID" ]; then
         xdotool windowminimize $WINDOW_ID
     else
         # Bring the window to the foreground and maximize it
-        wmctrl -ir $WINDOW_ID -b remove,hidden
-        wmctrl -ia $WINDOW_ID
-        wmctrl -ir $WINDOW_ID -b add,maximized_vert,maximized_horz
+        xdotool windowactivate $WINDOW_ID
+	xdotool windowraise $WINDOW_ID
+	xdotool windowfocus $WINDOW_ID
+        #wmctrl -ir $WINDOW_ID -b remove,hidden
+        #wmctrl -ia $WINDOW_ID
+        #wmctrl -ir $WINDOW_ID -b add,fullscreen,maximized_vert,maximized_horz
     fi
 else
     # Launch VSCode and wait for it to open

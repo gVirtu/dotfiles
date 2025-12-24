@@ -32,3 +32,5 @@
 	sup = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 [init]
 	defaultBranch = main
+[core]
+	autocrlf = input
